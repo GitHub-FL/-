@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>选择下拉框</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div>
+		<center>
+			<select name="###" id="DF" onchange="onC()">
+				<option value="0">
+					--请选择--
+				</option>
+				<option value="1">
+					南京
+				</option>
+				<option value="2">
+					高淳
+				</option>
+			</select>
+			<select name="###" id="JD">
+				<option value="0">
+					--请选择--
+				</option>
+			</select>
+		</center>
+	</div>
+</body>
+	
+<script>
+	var arr = [["夫子庙","秦淮河","紫金山"],['慢城','老街','湖滨大道']];
+	function onC(){
+		var DF = document.getElementById("DF");
+		var val = DF.value;
+		val = val -1;
+
+		var JD = document.getElementById("JD");
+		JD.options.length = 1;
+
+		for(var i = 0;i<arr[val].length;i++){
+			var op = document.createElement("option");
+			var Tt = document.createTextNode(arr[val][i]);
+			op.appendChild(Tt);
+			JD.appendChild(op);
+
+
+		};
+	};
+</script>
+
+</html>
